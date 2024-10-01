@@ -1,10 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbkcgejvl268x"]
+[gd_scene load_steps=6 format=3 uid="uid://bbkcgejvl268x"]
 
 [ext_resource type="Script" path="res://scripts/christmas_light.gd" id="1_bf2hb"]
 [ext_resource type="Texture2D" uid="uid://dxdoiwhn46v26" path="res://graphics/christmas_light.png" id="1_sas8j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2175"]
 radius = 8.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uhr02"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v88hi"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_max = 1.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 0.3
+radial_velocity_min = 3.99998
+radial_velocity_max = 5.99998
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
+scale_over_velocity_max = 231.18
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
 
 [node name="ChristmasLight" type="Node2D"]
 script = ExtResource("1_bf2hb")
@@ -13,9 +34,18 @@ script = ExtResource("1_bf2hb")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.6, 0.6)
 shape = SubResource("CircleShape2D_p2175")
 
 [node name="ChristmasLight" type="Sprite2D" parent="."]
+self_modulate = Color(3, 3, 3, 1)
+scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_sas8j")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+self_modulate = Color(2, 2, 2, 1)
+material = SubResource("CanvasItemMaterial_uhr02")
+amount = 13
+process_material = SubResource("ParticleProcessMaterial_v88hi")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

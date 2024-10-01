@@ -18,5 +18,11 @@ shape = SubResource("RectangleShape2D_qu43d")
 [node name="ChristmasTree" type="Sprite2D" parent="."]
 texture = ExtResource("1_dmyt2")
 
+[node name="Light1" type="Marker2D" parent="."]
+position = Vector2(-11, 3)
+
+[node name="Light2" type="Marker2D" parent="."]
+position = Vector2(12, 33)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

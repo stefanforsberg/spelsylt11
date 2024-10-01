@@ -1,7 +1,5 @@
-class_name ChristmasLight extends Node2D
+extends Area2D
 
-@onready var area_2d = $Area2D
-@export var id: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +11,15 @@ func _process(delta):
 	pass
 
 
-func _on_area_2d_body_entered(body):
+func _on_body_entered(body):
 	if body is Player:
-		area_2d.set_collision_mask_value(1,false)
-		body.add_light(self)
+		var parent = self.get_parent()
+		if parent:
+			parent.modulate.a = 0.1
+
+
+func _on_body_exited(body):
+	if body is Player:
+		var parent = self.get_parent()
+		if parent:
+			parent.modulate.a = 1
