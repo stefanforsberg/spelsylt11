@@ -71,6 +71,9 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("Left"):
 		direction = -1.0
 		
+	if Input.is_action_just_pressed("Down"):
+		position.y +=3
+		
 	if Input.is_action_just_pressed("Up"):
 		print(current_state as PlayerState)
 		match current_state:

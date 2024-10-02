@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://b61owyr3mgynk"]
+[gd_scene load_steps=53 format=4 uid="uid://b61owyr3mgynk"]
 
 [ext_resource type="Texture2D" uid="uid://bqdgc8edaynt7" path="res://graphics/ts.png" id="1_s52b1"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_bt70p"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dpoc6owwfpdom" path="res://graphics/bg04.png" id="4_ilgti"]
 [ext_resource type="Texture2D" uid="uid://cfubocopkwqjl" path="res://graphics/bg03.png" id="4_pmusd"]
 [ext_resource type="Texture2D" uid="uid://djp4gptkg5hbt" path="res://graphics/bg.png" id="6_hew21"]
-[ext_resource type="PackedScene" uid="uid://b2jocnclqbn65" path="res://scene/platform.tscn" id="6_jqwev"]
 [ext_resource type="Texture2D" uid="uid://bj6dy5ac7pmvp" path="res://graphics/bg01.png" id="7_5myje"]
 [ext_resource type="PackedScene" uid="uid://bbkcgejvl268x" path="res://scene/christmas_light.tscn" id="11_3e455"]
 [ext_resource type="PackedScene" uid="uid://b6bh6w2nj5wpo" path="res://scene/christmas_tree.tscn" id="12_80i16"]
@@ -20,21 +19,21 @@ texture = ExtResource("1_s52b1")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4.25, -8, -4.125)
-0:0/0/physics_layer_0/polygon_0/one_way = true
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.375, -0.25, 8, -8, 8, 8, -8, 8)
 0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
 1:0/0 = 0
 1:0/0/terrain_set = 0
 1:0/0/terrain = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4.25, -8, -4.125)
-1:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
 1:0/0/terrains_peering_bit/left_side = 0
 2:0/0 = 0
 2:0/0/terrain_set = 0
 2:0/0/terrain = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4.25, -8, -4.125)
-2:0/0/physics_layer_0/polygon_0/one_way = true
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -1.125, -2, 8, 8, -8, 8)
+2:0/0/terrains_peering_bit/bottom_side = 0
 2:0/0/terrains_peering_bit/left_side = 0
 3:0/0 = 0
 3:0/0/terrain_set = 0
@@ -66,18 +65,34 @@ texture = ExtResource("1_s52b1")
 7:0/0/terrains_peering_bit/left_side = 0
 0:1/0 = 0
 0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
 1:1/0 = 0
 1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
 2:1/0 = 0
 2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
 4:1/0 = 0
 4:1/0/terrain_set = 0
 4:1/0/terrain = 0
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0/terrains_peering_bit/bottom_side = 0
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -0.5, -0.375)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 0.875, 0.25, -8, 8)
 4:2/0 = 0
 4:2/0/terrain_set = 0
 4:2/0/terrain = 0
@@ -292,7 +307,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Jump",
-"speed": 45.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -391,7 +406,7 @@ glow_map_strength = 0.0
 [node name="Root" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD8//v/AQAGAAAAAAD9//v/AQAGAAAAAAD+//v/AQAAAAAAAAD///v/AQABAAAAAAACAPv/AQAFAAAAAAADAPv/AQAGAAAAAAAEAPv/AQAEAAAAAAAFAPv/AQAGAAAAAAAGAPv/AQAGAAAAAAAHAPv/AQAFAAAAAAAIAPv/AQAFAAAAAAAJAPv/AQAGAAAAAAAMAPv/AQAFAAAAAAANAPv/AQAEAAAAAAAOAPv/AQAGAAAAAAAPAPv/AQAFAAAAAAAQAPv/AQAEAAAAAAARAPv/AQAFAAAAAAASAPv/AQAHAAAAAAAKAPv/AQAFAAAAAAALAPv/AQAEAAAAAAD5//v/AQADAAAAAAD6//v/AQAFAAAAAAD7//v/AQAGAAAAAAD4//r/AQAEAAQAAAD4//n/AQAEAAEAAAD4//b/AQACAAEAAAD4//X/AQAEAAEAAAD3//n/AQAHAAAAAAD2//n/AQAGAAAAAAD1//n/AQADAAAAAAD3//b/AQAFAAAAAAD2//b/AQAFAAAAAAD1//b/AQADAAAAAAD0//f/AQAEAAEAAAD0//j/AQAEAAQAAAAiAPf/AQADAAAAAAAjAPf/AQAFAAAAAAAkAPf/AQAFAAAAAAAlAPf/AQAEAAAAAAAmAPf/AQAHAAAAAAAAAPv/AQACAAAAAAABAPv/AQADAAAAAAD9//z/AQAEAAAAAAD9//3/AQAEAAAAAAD9//7/AQAEAAAAAAD+//7/AQAEAAAAAAD///7/AQAEAAAAAAAAAP7/AQAEAAAAAAABAP7/AQAEAAAAAAABAP3/AQAEAAAAAAABAPz/AQAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8//v/AQAGAAAAAAD9//v/AQAEAAAAAAD+//v/AQAFAAAAAAD///v/AQAFAAAAAAAAAPv/AQAEAAAAAAABAPv/AQAGAAAAAAACAPv/AQAFAAAAAAADAPv/AQAGAAAAAAAEAPv/AQAEAAAAAAAFAPv/AQAGAAAAAAAGAPv/AQAGAAAAAAAHAPv/AQAFAAAAAAAIAPv/AQAFAAAAAAAJAPv/AQAGAAAAAAAMAPv/AQAFAAAAAAANAPv/AQAEAAAAAAAOAPv/AQAGAAAAAAAPAPv/AQAFAAAAAAAQAPv/AQAEAAAAAAARAPv/AQAFAAAAAAASAPv/AQAHAAAAAAAKAPv/AQAFAAAAAAALAPv/AQAEAAAAAAD5//v/AQADAAAAAAD6//v/AQAFAAAAAAD7//v/AQAGAAAAAAD4//r/AQAEAAQAAAD4//n/AQAEAAEAAAD4//b/AQACAAEAAAD4//X/AQAEAAEAAAD3//n/AQAHAAAAAAD2//n/AQAGAAAAAAD1//n/AQADAAAAAAD3//b/AQAFAAAAAAD2//b/AQAFAAAAAAD1//b/AQADAAAAAAD0//f/AQAEAAEAAAD0//j/AQAEAAQAAAA=")
 tile_set = SubResource("TileSet_cucjv")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -430,41 +445,24 @@ modulate = Color(1, 1, 1, 0.94902)
 texture = ExtResource("4_pmusd")
 centered = false
 
-[node name="Platforms" type="Node2D" parent="."]
-
-[node name="Platform" parent="Platforms" instance=ExtResource("6_jqwev")]
-position = Vector2(259, -108)
-distance = Vector2(0, 60)
-
-[node name="Platform2" parent="Platforms" instance=ExtResource("6_jqwev")]
-position = Vector2(380, -145)
-distance = Vector2(100, 0)
-phase_time = 10.0
-
 [node name="ChristmasTree" parent="." instance=ExtResource("12_80i16")]
 position = Vector2(190, -160)
 
 [node name="ChristmasLights" type="Node2D" parent="."]
 position = Vector2(212, 32)
 
-[node name="Cl0" parent="ChristmasLights" instance=ExtResource("11_3e455")]
+[node name="christmasLight" parent="ChristmasLights" instance=ExtResource("11_3e455")]
 modulate = Color(0, 0.846053, 0.851416, 1)
 self_modulate = Color(2, 2, 2, 1)
 position = Vector2(-131, -121)
 
-[node name="Cl2" parent="ChristmasLights" instance=ExtResource("11_3e455")]
-modulate = Color(0.573218, 0.570137, 0.199081, 1)
-self_modulate = Color(2, 2, 2, 1)
-position = Vector2(-214, -72)
-id = 2.0
-
-[node name="Cl1" parent="ChristmasLights" instance=ExtResource("11_3e455")]
+[node name="ChristmasLight" parent="ChristmasLights" instance=ExtResource("11_3e455")]
 modulate = Color(1, 0.683905, 0.617999, 1)
 position = Vector2(-378, -149)
 id = 1.0
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(-76, -89)
+position = Vector2(-15, -90)
 script = ExtResource("2_bt70p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]

@@ -1,12 +1,14 @@
 extends Node2D
 @onready var light_1 = $Light1
 @onready var light_2 = $Light2
+@onready var light_3 = $Light3
 
 var positions = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	positions.push_front(light_1.global_position)
 	positions.push_front(light_2.global_position)
+	positions.push_front(light_3.global_position)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,4 +39,4 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_body_exited(body):
-	var tween = create_tween()
+	pass
