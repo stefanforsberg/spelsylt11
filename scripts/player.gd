@@ -38,6 +38,8 @@ var current_state: PlayerState = PlayerState.IDLE:
 
 func _ready():
 	GameManager.camera = camera_2d
+	GameManager.player = self
+	GameManager.lastTeleportPosition = global_position
 
 # Jump function
 func jump():
@@ -75,7 +77,7 @@ func _physics_process(delta):
 		position.y +=3
 		
 	if Input.is_action_just_pressed("Up"):
-		print(current_state as PlayerState)
+		
 		match current_state:
 			PlayerState.IDLE, PlayerState.RUNNING:
 				jump()

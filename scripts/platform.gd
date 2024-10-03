@@ -7,8 +7,6 @@ extends AnimatableBody2D
 var pivot:Vector2
 var time:float
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pivot = global_position
 	
