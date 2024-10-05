@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var destruction_time: int = 3 
+@export var destruction_time: float = 3 
 var timer: Timer
 @onready var gpu_particles_2d = $GPUParticles2D
 var is_destroying:bool = false

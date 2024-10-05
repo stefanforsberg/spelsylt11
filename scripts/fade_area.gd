@@ -15,7 +15,8 @@ func _on_body_entered(body):
 	if body is Player:
 		var parent = self.get_parent()
 		if parent:
-			var tween = get_tree().create_tween().tween_method(fade_in_hidden, 1.0, 0.0, 0.1)
+			var tween = get_tree().create_tween()
+			tween.tween_method(fade_in_hidden, 1.0, 0.0, 0.1)
 			# parent.modulate.a = 0.00
 
 

@@ -492,23 +492,21 @@ phase_time = 10.0
 
 [node name="toggling_platform" parent="Platforms" instance=ExtResource("8_ldunu")]
 position = Vector2(-40, -104)
-destruction_time = 1
+destruction_time = 0.5
 
 [node name="toggling_platform2" parent="Platforms" instance=ExtResource("8_ldunu")]
 position = Vector2(-77, -136)
-destruction_time = 1
+destruction_time = 0.5
 
 [node name="toggling_platform3" parent="Platforms" instance=ExtResource("8_ldunu")]
 position = Vector2(-24, -165)
-destruction_time = 1
+destruction_time = 0.5
 
 [node name="toggling_platform4" parent="Platforms" instance=ExtResource("8_ldunu")]
 position = Vector2(-82, -197)
-destruction_time = 1
 
 [node name="toggling_platform5" parent="Platforms" instance=ExtResource("8_ldunu")]
 position = Vector2(-29, -220)
-destruction_time = 1
 
 [node name="ChristmasTree" parent="." instance=ExtResource("12_80i16")]
 position = Vector2(190, -160)
