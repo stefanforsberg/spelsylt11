@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://b61owyr3mgynk"]
+[gd_scene load_steps=67 format=4 uid="uid://b61owyr3mgynk"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b2d52"]
 [ext_resource type="Texture2D" uid="uid://bqdgc8edaynt7" path="res://graphics/ts.png" id="1_s52b1"]
@@ -12,10 +12,16 @@
 [ext_resource type="Texture2D" uid="uid://djp4gptkg5hbt" path="res://graphics/bg.png" id="6_hew21"]
 [ext_resource type="PackedScene" uid="uid://b2jocnclqbn65" path="res://scene/platform.tscn" id="6_jqwev"]
 [ext_resource type="Texture2D" uid="uid://bj6dy5ac7pmvp" path="res://graphics/bg01.png" id="7_5myje"]
+[ext_resource type="PackedScene" uid="uid://brpguk6rjo4nu" path="res://scene/toggling_platform.tscn" id="8_ldunu"]
 [ext_resource type="PackedScene" uid="uid://bbkcgejvl268x" path="res://scene/christmas_light.tscn" id="11_3e455"]
+[ext_resource type="Texture2D" uid="uid://dd4chgfsb6q04" path="res://graphics/door.png" id="11_mj822"]
 [ext_resource type="PackedScene" uid="uid://b6bh6w2nj5wpo" path="res://scene/christmas_tree.tscn" id="12_80i16"]
+[ext_resource type="PackedScene" uid="uid://bhql2dgn8jgja" path="res://scene/key.tscn" id="12_b782n"]
 [ext_resource type="PackedScene" uid="uid://d1axjq533pdtf" path="res://scene/fade_area.tscn" id="12_mae0n"]
+[ext_resource type="PackedScene" uid="uid://cc58gf2ws3sdn" path="res://scene/locked_door.tscn" id="13_oywcp"]
 [ext_resource type="PackedScene" uid="uid://cq23ae5kmkq3" path="res://scene/door.tscn" id="15_ccuwj"]
+[ext_resource type="Texture2D" uid="uid://bnsp1f7cij72i" path="res://graphics/key.png" id="20_jt76p"]
+[ext_resource type="PackedScene" uid="uid://b0youtyc6fknt" path="res://scene/santa_worm.tscn" id="22_mgva6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_70hkc"]
 texture = ExtResource("1_s52b1")
@@ -100,6 +106,8 @@ texture = ExtResource("1_s52b1")
 7:4/0 = 0
 6:5/0 = 0
 7:5/0 = 0
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.75, -1, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_cucjv"]
 physics_layer_0/collision_layer = 1
@@ -107,6 +115,34 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Ground 0"
 terrain_set_0/terrain_0/color = Color(0.643813, 0.000154115, 0.588813, 1)
 sources/1 = SubResource("TileSetAtlasSource_70hkc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3s2ma"]
+texture = ExtResource("1_s52b1")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+4:4/0 = 0
+7:4/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_stgnq"]
+sources/0 = SubResource("TileSetAtlasSource_3s2ma")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvgs5"]
+size = Vector2(16, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0vuh"]
+size = Vector2(12, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8u4t3"]
 atlas = ExtResource("3_jtw2p")
@@ -397,8 +433,12 @@ size = Vector2(1773, 30)
 script = ExtResource("1_b2d52")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD8//v/AQAGAAAAAAD9//v/AQAGAAAAAAD+//v/AQAAAAAAAAD///v/AQABAAAAAAACAPv/AQAFAAAAAAADAPv/AQAGAAAAAAAEAPv/AQAEAAAAAAAFAPv/AQAGAAAAAAAGAPv/AQAGAAAAAAAHAPv/AQAFAAAAAAAIAPv/AQAFAAAAAAAJAPv/AQAGAAAAAAAMAPv/AQAFAAAAAAANAPv/AQAEAAAAAAAOAPv/AQAGAAAAAAAPAPv/AQAFAAAAAAAQAPv/AQAEAAAAAAARAPv/AQAFAAAAAAASAPv/AQAHAAAAAAAKAPv/AQAFAAAAAAALAPv/AQAEAAAAAAD5//v/AQADAAAAAAD6//v/AQAFAAAAAAD7//v/AQAGAAAAAAD4//r/AQAEAAQAAAD4//n/AQAEAAEAAAD4//b/AQACAAEAAAD4//X/AQAEAAEAAAD3//n/AQAHAAAAAAD2//n/AQAGAAAAAAD1//n/AQADAAAAAAD3//b/AQAFAAAAAAD2//b/AQAFAAAAAAD1//b/AQADAAAAAAD0//f/AQAEAAEAAAD0//j/AQAEAAQAAAAiAPf/AQADAAAAAAAjAPf/AQAFAAAAAAAkAPf/AQAFAAAAAAAlAPf/AQAEAAAAAAAmAPf/AQAHAAAAAAAAAPv/AQACAAAAAAABAPv/AQADAAAAAAD9//z/AQAEAAAAAAD9//3/AQAEAAAAAAD9//7/AQAEAAAAAAD+//7/AQAEAAAAAAD///7/AQAEAAAAAAAAAP7/AQAEAAAAAAABAP7/AQAEAAAAAAABAP3/AQAEAAAAAAABAPz/AQAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8//v/AQAGAAAAAAD9//v/AQAGAAAAAAD+//v/AQAAAAAAAAD///v/AQABAAAAAAACAPv/AQAFAAAAAAADAPv/AQAGAAAAAAAEAPv/AQAEAAAAAAAFAPv/AQAGAAAAAAAGAPv/AQAGAAAAAAAHAPv/AQAFAAAAAAAIAPv/AQAFAAAAAAAJAPv/AQAGAAAAAAAMAPv/AQAFAAAAAAANAPv/AQAEAAAAAAAOAPv/AQAGAAAAAAAPAPv/AQAFAAAAAAAQAPv/AQAEAAAAAAARAPv/AQAFAAAAAAASAPv/AQAHAAAAAAAKAPv/AQAFAAAAAAALAPv/AQAEAAAAAAD5//v/AQADAAAAAAD6//v/AQAFAAAAAAD7//v/AQAGAAAAAAD4//r/AQAEAAQAAAD4//n/AQAEAAEAAAD4//b/AQACAAEAAAD4//X/AQAEAAEAAAD3//n/AQAHAAAAAAD2//n/AQAGAAAAAAD1//n/AQADAAAAAAD3//b/AQAFAAAAAAD2//b/AQAFAAAAAAD1//b/AQADAAAAAAD0//f/AQAEAAEAAAD0//j/AQAEAAQAAAAiAPf/AQADAAAAAAAjAPf/AQAFAAAAAAAkAPf/AQAFAAAAAAAlAPf/AQAEAAAAAAAmAPf/AQAHAAAAAAAAAPv/AQACAAAAAAABAPv/AQADAAAAAAD9//z/AQAEAAAAAAD9//3/AQAEAAAAAAD9//7/AQAEAAAAAAD+//7/AQAEAAAAAAD///7/AQAEAAAAAAAAAP7/AQAEAAAAAAABAP7/AQAEAAAAAAABAP3/AQAEAAAAAAABAPz/AQAEAAAAAAAqAPf/AQAEAAAAAAArAPf/AQAFAAAAAAAsAPf/AQAEAAAAAAAtAPf/AQAEAAAAAAAuAPf/AQAFAAAAAAAvAPf/AQAEAAAAAAApAPf/AQADAAAAAAAwAPf/AQAFAAAAAAAxAPf/AQAFAAAAAAAyAPf/AQAFAAAAAAAzAPf/AQAGAAAAAAA0APf/AQAFAAAAAAA1APf/AQAFAAAAAAA2APf/AQAGAAAAAAA3APf/AQAGAAAAAAA4APf/AQAFAAAAAAA5APf/AQAFAAAAAAA6APf/AQAFAAAAAAA7APf/AQAFAAAAAAA8APf/AQAFAAAAAAA9APf/AQAEAAIAAAA9APb/AQAEAAIAAAA9APX/AQAEAAIAAAA9APT/AQAEAAIAAAA9APP/AQAEAAIAAAA9APL/AQAEAAIAAAA9APH/AQAEAAIAAAA9APD/AQADAAAAAAA+APD/AQAFAAAAAAA/APD/AQAFAAAAAAA4APP/AQAFAAAAAAA3APP/AQAFAAAAAAA2APP/AQAFAAAAAAA1APP/AQAFAAAAAAA0APP/AQAFAAAAAAAzAPP/AQAFAAAAAAAyAPP/AQAFAAAAAAA=")
 tile_set = SubResource("TileSet_cucjv")
+
+[node name="TileMapLayerDecoration" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8//r/AAAGAAUAAAD+//3/AAAGAAUAAAAJAPr/AAAHAAUAAAAMAPr/AAAGAAUAAAAQAPr/AAAGAAUAAAD5//r/AAAGAAUAAAD2//j/AAAGAAUAAAA=")
+tile_set = SubResource("TileSet_stgnq")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -406,46 +446,69 @@ tile_set = SubResource("TileSet_cucjv")
 motion_scale = Vector2(0, 0)
 
 [node name="Bg" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture = ExtResource("6_hew21")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 modulate = Color(1, 1, 1, 0.117647)
 motion_scale = Vector2(0.2, 0.2)
-motion_mirroring = Vector2(320, 200)
+motion_mirroring = Vector2(480, 300)
 
 [node name="Bg02" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_gdwfg")
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.1)
-motion_mirroring = Vector2(320, 320)
+motion_mirroring = Vector2(480, 480)
 
 [node name="Bg04" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+scale = Vector2(1.5, 1)
 texture = ExtResource("4_ilgti")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 0.3)
-motion_mirroring = Vector2(320, 320)
+motion_mirroring = Vector2(480, 480)
 
 [node name="Bg03" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 modulate = Color(1, 1, 1, 0.94902)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_pmusd")
 centered = false
 
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("6_jqwev")]
-position = Vector2(259, -108)
+position = Vector2(319, -105)
 distance = Vector2(0, 60)
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("6_jqwev")]
-position = Vector2(380, -145)
+position = Vector2(419, -143)
 distance = Vector2(100, 0)
 phase_time = 10.0
+
+[node name="toggling_platform" parent="Platforms" instance=ExtResource("8_ldunu")]
+position = Vector2(-40, -104)
+destruction_time = 1
+
+[node name="toggling_platform2" parent="Platforms" instance=ExtResource("8_ldunu")]
+position = Vector2(-77, -136)
+destruction_time = 1
+
+[node name="toggling_platform3" parent="Platforms" instance=ExtResource("8_ldunu")]
+position = Vector2(-24, -165)
+destruction_time = 1
+
+[node name="toggling_platform4" parent="Platforms" instance=ExtResource("8_ldunu")]
+position = Vector2(-82, -197)
+destruction_time = 1
+
+[node name="toggling_platform5" parent="Platforms" instance=ExtResource("8_ldunu")]
+position = Vector2(-29, -220)
+destruction_time = 1
 
 [node name="ChristmasTree" parent="." instance=ExtResource("12_80i16")]
 position = Vector2(190, -160)
@@ -473,15 +536,70 @@ id = 1.0
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Door" parent="Doors" instance=ExtResource("15_ccuwj")]
-position = Vector2(48, -80)
-destination = Vector2(575, -144)
+position = Vector2(50, -80)
+destination = Vector2(605, -144)
 
 [node name="Door2" parent="Doors" instance=ExtResource("15_ccuwj")]
 position = Vector2(605, -144)
 destination = Vector2(48, -80)
 
+[node name="Moveable" type="Node" parent="."]
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="Moveable"]
+position = Vector2(725, -128)
+collision_layer = 256
+mass = 28.09
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moveable/RigidBody2D2"]
+position = Vector2(113, -90)
+shape = SubResource("RectangleShape2D_rvgs5")
+
+[node name="Door" type="Sprite2D" parent="Moveable/RigidBody2D2"]
+position = Vector2(113, -96)
+texture = ExtResource("11_mj822")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Moveable/RigidBody2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moveable/RigidBody2D2/StaticBody2D"]
+position = Vector2(113, -104.5)
+shape = SubResource("RectangleShape2D_u0vuh")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Moveable"]
+position = Vector2(643, -65)
+collision_layer = 256
+mass = 28.09
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moveable/RigidBody2D"]
+position = Vector2(113, -90)
+shape = SubResource("RectangleShape2D_rvgs5")
+
+[node name="Door" type="Sprite2D" parent="Moveable/RigidBody2D"]
+position = Vector2(113, -96)
+texture = ExtResource("11_mj822")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Moveable/RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moveable/RigidBody2D/StaticBody2D"]
+position = Vector2(113, -104.5)
+shape = SubResource("RectangleShape2D_u0vuh")
+
+[node name="Keys" type="Node" parent="."]
+
+[node name="Key0" parent="Keys" instance=ExtResource("12_b782n")]
+modulate = Color(1.63645e-06, 0.637974, 0.768275, 1)
+position = Vector2(-34, -88)
+
+[node name="LockedDoor" parent="Keys" instance=ExtResource("13_oywcp")]
+position = Vector2(-151, -192)
+color = Color(0, 0.639216, 0.768627, 1)
+
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(-76, -89)
+floor_constant_speed = true
+floor_max_angle = 0.872665
+floor_snap_length = 5.9
 script = ExtResource("2_bt70p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -494,7 +612,7 @@ shape = SubResource("RectangleShape2D_b2xki")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -25)
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 drag_horizontal_enabled = true
 
 [node name="TileMapLayer_HiddenArea" type="TileMapLayer" parent="."]
@@ -519,10 +637,43 @@ centered = false
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yeopn")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="PreventFalling" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PreventFalling"]
 position = Vector2(468.5, 199)
 shape = SubResource("RectangleShape2D_8ckot")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 639.0
+offset_bottom = 40.0
+
+[node name="CollectedLights" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 11.0
+offset_right = 632.0
+offset_bottom = 34.0
+text = "00 / 12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChristmasLight" parent="CanvasLayer/Control" instance=ExtResource("11_3e455")]
+modulate = Color(0.144094, 0.318938, 0.344631, 1)
+position = Vector2(566, 23)
+scale = Vector2(1.68, 1.68)
+
+[node name="Key0" type="Sprite2D" parent="CanvasLayer/Control"]
+visible = false
+modulate = Color(0, 0.639216, 0.768627, 1)
+position = Vector2(542, 21)
+texture = ExtResource("20_jt76p")
+
+[node name="Area2D" parent="." instance=ExtResource("22_mgva6")]
+position = Vector2(225, -95)
+
+[connection signal="body_entered" from="PreventFalling" to="." method="_on_area_2d_body_entered"]

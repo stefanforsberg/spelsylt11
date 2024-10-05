@@ -8,7 +8,7 @@ var pivot:Vector2
 var time:float
 
 func _ready():
-	pivot = global_position
+	pivot = global_position - distance / 2
 	
 func get_pos(t:float):
 	var x:float = pivot.x + cos(TAU*(t+phase_offset)) * distance.x

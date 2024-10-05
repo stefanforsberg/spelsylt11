@@ -28,14 +28,15 @@ func _on_area_2d_body_entered(body):
 		for light in body.collected_lights:
 			light.global_position = body.global_position
 			
-			print(light.id)
-			
 			create_tween().tween_property(light, "global_position", positions[light.id], 1)
 			
-			# light.global_position = global_position
 			light.visible = true
 			
+			GameManager.collectedLights.push_back(light.id)
+			
 		body.collected_lights = []
+		
+		GameManager.collectedLightsLabel.text = "%s / %s" % [str(GameManager.collectedLights.size()).pad_zeros(2), "12"]
 
 
 func _on_area_2d_body_exited(body):

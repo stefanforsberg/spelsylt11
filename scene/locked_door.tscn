@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://cc58gf2ws3sdn"]
+
+[ext_resource type="Texture2D" uid="uid://dj7kaq2t2s4wp" path="res://graphics/locked_door.png" id="1_76ups"]
+[ext_resource type="Script" path="res://scripts/locked_door.gd" id="1_tv6y3"]
+[ext_resource type="Shader" uid="uid://cmxwopow3nsqd" path="res://scene/door.tres" id="2_uuvx4"]
+[ext_resource type="Texture2D" uid="uid://bnsp1f7cij72i" path="res://graphics/key.png" id="4_23ptt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qswfe"]
+size = Vector2(16, 64)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rtpqa"]
+seed = 11
+frequency = 0.0198
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w80d7"]
+noise = SubResource("FastNoiseLite_rtpqa")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dh0e4"]
+shader = ExtResource("2_uuvx4")
+shader_parameter/DissolveValue = 1.0
+shader_parameter/Noise = SubResource("NoiseTexture2D_w80d7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inqxe"]
+size = Vector2(26, 64)
+
+[node name="LockedDoor" type="Node2D"]
+script = ExtResource("1_tv6y3")
+
+[node name="Door" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+shape = SubResource("RectangleShape2D_qswfe")
+
+[node name="LockedDoor" type="Sprite2D" parent="Door"]
+material = SubResource("ShaderMaterial_dh0e4")
+texture = ExtResource("1_76ups")
+
+[node name="Key" type="Sprite2D" parent="Door"]
+position = Vector2(0, -1)
+texture = ExtResource("4_23ptt")
+
+[node name="KeyDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDetection"]
+shape = SubResource("RectangleShape2D_inqxe")
+
+[connection signal="body_entered" from="KeyDetection" to="." method="_on_key_detection_body_entered"]

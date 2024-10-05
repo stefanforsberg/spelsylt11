@@ -145,3 +145,5 @@ func add_light(light: ChristmasLight):
 	light.visible = false
 	collected_lights.push_front(light)
 	
+func key_pickup(id:int):
+	pass
