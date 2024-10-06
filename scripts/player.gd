@@ -80,6 +80,8 @@ func _physics_process(delta):
 		
 		match current_state:
 			PlayerState.IDLE, PlayerState.RUNNING:
+				var jumpvfx = preload("res://scene/jump_vfx.tscn")
+				GameManager.SpawnVFX(jumpvfx, global_position)
 				jump()
 			PlayerState.FALLING, PlayerState.JUMPING:
 				print("Not jumping from ground")

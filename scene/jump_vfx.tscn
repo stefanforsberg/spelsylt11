@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://drbugnf4epieg"]
+
+[ext_resource type="Texture2D" uid="uid://dwumjr15ec6q3" path="res://graphics/worm_jump_fx.png" id="1_5auuu"]
+[ext_resource type="Script" path="res://scripts/jump_vfx.gd" id="2_gc5gc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ircxu"]
+atlas = ExtResource("1_5auuu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbjx6"]
+atlas = ExtResource("1_5auuu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0858"]
+atlas = ExtResource("1_5auuu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khgw5"]
+atlas = ExtResource("1_5auuu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxo0m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ircxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbjx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0858")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khgw5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj3k0"]
+atlas = ExtResource("1_5auuu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w3r0"]
+atlas = ExtResource("1_5auuu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dgj7"]
+atlas = ExtResource("1_5auuu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5eum"]
+atlas = ExtResource("1_5auuu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8a1hk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj3k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0w3r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dgj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5eum")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.0
+}]
+
+[node name="JumpVFX" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_rxo0m")
+frame = 3
+frame_progress = 1.0
+offset = Vector2(-6, -8)
+script = ExtResource("2_gc5gc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8a1hk")
+offset = Vector2(6, -8)
+flip_h = true
