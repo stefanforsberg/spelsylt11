@@ -11,7 +11,7 @@ size = Vector2(12, 5)
 [node name="Pillar" type="RigidBody2D"]
 position = Vector2(643, -65)
 collision_layer = 256
-mass = 28.09
+mass = 31.729
 lock_rotation = true
 script = ExtResource("1_8u1uc")
 

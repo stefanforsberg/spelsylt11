@@ -13,16 +13,13 @@ class_name Player
 @export var double_jump_enabled: bool = false
 
 
-# State tracking variables
 var on_ground: bool = false
 var coyote_timer: float = 0.0
 var can_double_jump: bool = true
 var has_jumped: bool = false 
 
-# Enum for state machine
 enum PlayerState { IDLE, RUNNING, JUMPING, FALLING, DOUBLE_JUMP }
 
-# Current player state
 var current_state: PlayerState = PlayerState.IDLE:
 	set(value):
 		
@@ -91,6 +88,10 @@ func _physics_process(delta):
 				elif can_double_jump and double_jump_enabled:
 					print("Double jump")
 					double_jump()
+					
+	# Handle short jump
+	if Input.is_action_just_released("Up") and velocity.y < 0:
+		velocity.y = max(velocity.y, -jump_strength * 0.4)
 	
 	velocity.x = direction * speed
 

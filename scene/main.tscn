@@ -108,8 +108,24 @@ texture = ExtResource("1_s52b1")
 7:4/0 = 0
 6:5/0 = 0
 7:5/0 = 0
-0:7/0 = 0
-0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.75, -1, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_cucjv"]
 physics_layer_0/collision_layer = 1
@@ -429,7 +445,7 @@ size = Vector2(2415, 30)
 script = ExtResource("1_b2d52")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD8//v/AQAGAAAAAAD9//v/AQAGAAAAAAD+//v/AQAAAAAAAAD///v/AQABAAAAAAACAPv/AQAFAAAAAAADAPv/AQAGAAAAAAAEAPv/AQAEAAAAAAAFAPv/AQAGAAAAAAAGAPv/AQAGAAAAAAAHAPv/AQAFAAAAAAAIAPv/AQAFAAAAAAAJAPv/AQAGAAAAAAAMAPv/AQAFAAAAAAANAPv/AQAEAAAAAAAOAPv/AQAGAAAAAAAPAPv/AQAFAAAAAAAQAPv/AQAEAAAAAAARAPv/AQAFAAAAAAASAPv/AQAHAAAAAAAKAPv/AQAFAAAAAAALAPv/AQAEAAAAAAD5//v/AQADAAAAAAD6//v/AQAFAAAAAAD7//v/AQAGAAAAAAD4//r/AQAEAAQAAAD4//n/AQAEAAEAAAD4//b/AQACAAEAAAD4//X/AQAEAAEAAAD3//n/AQAHAAAAAAD2//n/AQAGAAAAAAD1//n/AQADAAAAAAD3//b/AQAFAAAAAAD2//b/AQAFAAAAAAD1//b/AQADAAAAAAD0//f/AQAEAAEAAAD0//j/AQAEAAQAAAAiAPf/AQADAAAAAAAjAPf/AQAFAAAAAAAkAPf/AQAFAAAAAAAlAPf/AQAEAAAAAAAmAPf/AQAHAAAAAAAAAPv/AQACAAAAAAABAPv/AQADAAAAAAD9//z/AQAEAAAAAAD9//3/AQAEAAAAAAD9//7/AQAEAAAAAAD+//7/AQAEAAAAAAD///7/AQAEAAAAAAAAAP7/AQAEAAAAAAABAP7/AQAEAAAAAAABAP3/AQAEAAAAAAABAPz/AQAEAAAAAAAqAPf/AQAEAAAAAAArAPf/AQAFAAAAAAAsAPf/AQAEAAAAAAAtAPf/AQAEAAAAAAAuAPf/AQAFAAAAAAAvAPf/AQAEAAAAAAApAPf/AQADAAAAAAAwAPf/AQAFAAAAAAAxAPf/AQAFAAAAAAAyAPf/AQAFAAAAAAAzAPf/AQAGAAAAAAA0APf/AQAFAAAAAAA1APf/AQAFAAAAAAA2APf/AQAGAAAAAAA3APf/AQAGAAAAAAA4APf/AQAFAAAAAAA5APf/AQAFAAAAAAA6APf/AQAFAAAAAAA7APf/AQAFAAAAAAA8APf/AQAFAAAAAAA9APf/AQAEAAIAAAA9APb/AQAEAAIAAAA9APX/AQAEAAIAAAA9APT/AQAEAAIAAAA9APP/AQAEAAIAAAA9APL/AQAEAAIAAAA9APH/AQAEAAIAAAA9APD/AQADAAAAAAA+APD/AQAFAAAAAAA/APD/AQAFAAAAAAA4APP/AQAFAAAAAAA3APP/AQAFAAAAAAA2APP/AQAFAAAAAAA1APP/AQAFAAAAAAA0APP/AQAFAAAAAAAzAPP/AQAFAAAAAAAyAPP/AQAFAAAAAADx//f/AQADAAAAAADw//f/AQADAAAAAADv//f/AQADAAAAAADu//f/AQADAAAAAADt//f/AQADAAAAAADs//f/AQADAAAAAADp//f/AQADAAAAAADo//f/AQADAAAAAADn//f/AQADAAAAAADm//f/AQADAAAAAAA=")
+tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_cucjv")
 
 [node name="TileMapLayerDecoration" type="TileMapLayer" parent="."]
@@ -478,34 +494,34 @@ centered = false
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("6_jqwev")]
-position = Vector2(319, -105)
+position = Vector2(551, -207)
 distance = Vector2(0, 60)
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("6_jqwev")]
-position = Vector2(419, -143)
+position = Vector2(480, -196)
 distance = Vector2(100, 0)
 phase_time = 10.0
 
 [node name="toggling_platform" parent="Platforms" instance=ExtResource("8_ldunu")]
-position = Vector2(-40, -104)
+position = Vector2(-176, -486)
 destruction_time = 0.5
 
 [node name="toggling_platform2" parent="Platforms" instance=ExtResource("8_ldunu")]
-position = Vector2(-77, -136)
+position = Vector2(-213, -518)
 destruction_time = 0.5
 
 [node name="toggling_platform3" parent="Platforms" instance=ExtResource("8_ldunu")]
-position = Vector2(-24, -165)
+position = Vector2(-160, -547)
 destruction_time = 0.5
 
 [node name="toggling_platform4" parent="Platforms" instance=ExtResource("8_ldunu")]
-position = Vector2(-82, -197)
+position = Vector2(-218, -579)
 
 [node name="toggling_platform5" parent="Platforms" instance=ExtResource("8_ldunu")]
-position = Vector2(-29, -220)
+position = Vector2(-165, -602)
 
 [node name="ChristmasTree" parent="." instance=ExtResource("12_80i16")]
-position = Vector2(190, -160)
+position = Vector2(256, -160)
 
 [node name="ChristmasLights" type="Node2D" parent="."]
 position = Vector2(212, 32)
@@ -513,24 +529,24 @@ position = Vector2(212, 32)
 [node name="Cl0" parent="ChristmasLights" instance=ExtResource("11_3e455")]
 modulate = Color(0, 0.846053, 0.851416, 1)
 self_modulate = Color(2, 2, 2, 1)
-position = Vector2(-131, -121)
+position = Vector2(-101, -124)
 
 [node name="Cl2" parent="ChristmasLights" instance=ExtResource("11_3e455")]
 modulate = Color(0.573218, 0.570137, 0.199081, 1)
 self_modulate = Color(2, 2, 2, 1)
-position = Vector2(-214, -72)
+position = Vector2(-70, -121)
 scale = Vector2(0.994918, 1.06159)
 id = 2.0
 
 [node name="Cl1" parent="ChristmasLights" instance=ExtResource("11_3e455")]
 modulate = Color(1, 0.683905, 0.617999, 1)
-position = Vector2(-377, -153)
+position = Vector2(-219, -77)
 id = 1.0
 
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Door" parent="Doors" instance=ExtResource("15_ccuwj")]
-position = Vector2(50, -80)
+position = Vector2(504, -250)
 destination = Vector2(605, -144)
 
 [node name="Door2" parent="Doors" instance=ExtResource("15_ccuwj")]
@@ -544,7 +560,8 @@ position = Vector2(644, -64)
 
 [node name="Pillar2" parent="Moveable" instance=ExtResource("12_x0o2u")]
 position = Vector2(731, -128)
-id = 1
+mass = 13.275
+linear_damp = 11.543
 
 [node name="Lever" parent="Moveable" instance=ExtResource("13_8sxrp")]
 position = Vector2(680, -152)
@@ -553,33 +570,33 @@ position = Vector2(680, -152)
 
 [node name="Key0" parent="Keys" instance=ExtResource("12_b782n")]
 modulate = Color(1.63645e-06, 0.637974, 0.768275, 1)
-position = Vector2(-34, -88)
+position = Vector2(-89, -530)
 
 [node name="LockedDoor" parent="Keys" instance=ExtResource("13_oywcp")]
-position = Vector2(-151, -192)
+position = Vector2(104, -192)
 color = Color(0, 0.639216, 0.768627, 1)
 
 [node name="Spikes" type="Node" parent="."]
 
 [node name="Spike" parent="Spikes" instance=ExtResource("15_on564")]
-position = Vector2(-208, -178)
+position = Vector2(-113, -435)
 max = Vector2(0, 50)
 time = 4
 
 [node name="Spike2" parent="Spikes" instance=ExtResource("15_on564")]
-position = Vector2(-336, -135)
+position = Vector2(-241, -392)
 max = Vector2(0, -80)
 time = 3
 delay = 2
 
 [node name="Spike3" parent="Spikes" instance=ExtResource("15_on564")]
-position = Vector2(-235, -161)
+position = Vector2(-140, -418)
 max = Vector2(-150, 0)
 time = 3
 delay = 2
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(-87, -88)
+position = Vector2(-130, -87)
 floor_constant_speed = true
 floor_max_angle = 0.872665
 floor_snap_length = 5.9
@@ -601,11 +618,10 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="TileMapLayer_HiddenArea" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD4//j/AgAEAAIAAAD4//f/AgAEAAIAAAD3//j/AgAEAAIAAAD3//f/AgAEAAIAAAD2//f/AgAEAAIAAAD2//j/AgAEAAIAAAD1//f/AgAEAAIAAAD1//j/AgAEAAIAAAA=")
 tile_set = SubResource("TileSet_mb3i3")
 
 [node name="FadeArea" parent="TileMapLayer_HiddenArea" instance=ExtResource("12_mae0n")]
-position = Vector2(-144, -128)
+position = Vector2(-183, -363)
 scale = Vector2(-3.19726, 2.52873)
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
@@ -659,6 +675,6 @@ position = Vector2(542, 21)
 texture = ExtResource("20_jt76p")
 
 [node name="Area2D" parent="." instance=ExtResource("22_mgva6")]
-position = Vector2(225, -95)
+position = Vector2(306, -96)
 
 [connection signal="body_entered" from="PreventFalling" to="." method="_on_area_2d_body_entered"]

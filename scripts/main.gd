@@ -15,3 +15,4 @@ func collect_key(id):
 	
 	if id == 0: 
 		key_0.visible = true
+ 
