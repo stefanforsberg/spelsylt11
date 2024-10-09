@@ -1,6 +1,8 @@
 extends Area2D
 
 @export var destination: Vector2
+@onready var gpu_particles_2d = $GPUParticles2D
+@onready var point_light_2d = $PointLight2D
 
 var canTeleport = false;
 
@@ -18,6 +20,8 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body is Player:
+		gpu_particles_2d.emitting = true
+		point_light_2d.enabled = true
 		canTeleport = true
 
 

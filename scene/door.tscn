@@ -1,10 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq23ae5kmkq3"]
+[gd_scene load_steps=12 format=3 uid="uid://cq23ae5kmkq3"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_hcv3o"]
 [ext_resource type="Texture2D" uid="uid://dd4chgfsb6q04" path="res://graphics/door.png" id="1_syi84"]
+[ext_resource type="Texture2D" uid="uid://cnaryca70pwf0" path="res://graphics/door_lightning.png" id="3_cgmkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjygx"]
 size = Vector2(16, 28)
+
+[sub_resource type="Curve" id="Curve_7tbjo"]
+_data = [Vector2(0.0333333, 0), 0.0, 0.0, 0, 0, Vector2(0.54, 0.395604), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_w1msm"]
+curve = SubResource("Curve_7tbjo")
+
+[sub_resource type="Gradient" id="Gradient_57ry2"]
+offsets = PackedFloat32Array(0, 0.221311, 0.459016, 0.721311, 1)
+colors = PackedColorArray(0, 0.839906, 0.961042, 1, 1, 1, 1, 1, 1, 0.560504, 0.982174, 1, 0.984366, 1.54018e-06, 0.565795, 1, 0.920321, 0.783148, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cq2du"]
+gradient = SubResource("Gradient_57ry2")
+
+[sub_resource type="Curve" id="Curve_857rj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ot3s1"]
+curve = SubResource("Curve_857rj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_edkmn"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(5, 1, 1)
+gravity = Vector3(0, -15, 0)
+radial_accel_min = -52.24
+radial_accel_max = -4.36
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_ot3s1")
+color = Color(2, 2, 2, 1)
+color_initial_ramp = SubResource("GradientTexture1D_cq2du")
+alpha_curve = SubResource("CurveTexture_w1msm")
 
 [node name="Door" type="Area2D"]
 script = ExtResource("1_hcv3o")
@@ -17,6 +52,21 @@ shape = SubResource("RectangleShape2D_hjygx")
 position = Vector2(-8, -32)
 texture = ExtResource("1_syi84")
 centered = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -3)
+emitting = false
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_edkmn")
+lifetime = 3.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -10.5)
+scale = Vector2(1, 0.53125)
+enabled = false
+energy = 4.17
+blend_mode = 2
+texture = ExtResource("3_cgmkr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

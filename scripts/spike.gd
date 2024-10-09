@@ -18,7 +18,6 @@ func _ready():
 	move()
 
 func move():
-	var t = create_tween()
 
 	await create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT).tween_property(area_2d, "position", max if dir == 1 else min, 1).finished
 	dir = 1 if dir == 0 else 0

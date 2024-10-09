@@ -22,9 +22,7 @@ func _on_key_detection_body_entered(body):
 		return
 	
 	if body is Player:
-		print(GameManager.collectedKeys)
 		if GameManager.collectedKeys.any(func(number): return id == number):
-			print("open")
 			active = false
 			door.set_collision_layer_value(1,false)
 			

@@ -1,30 +1,30 @@
 [gd_scene load_steps=5 format=3 uid="uid://dyn1w8fdbkcen"]
 
 [ext_resource type="Script" path="res://scripts/pillar.gd" id="1_8u1uc"]
-[ext_resource type="Texture2D" uid="uid://dd4chgfsb6q04" path="res://graphics/door.png" id="1_qh5q4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvgs5"]
+[ext_resource type="Texture2D" uid="uid://dgl58cy8ob6ca" path="res://graphics/pillar.png" id="2_4glvx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0vuh"]
 size = Vector2(12, 5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvgs5"]
+size = Vector2(16, 21.5)
+
 [node name="Pillar" type="RigidBody2D"]
-position = Vector2(643, -65)
+position = Vector2(2, -11)
 collision_layer = 256
 mass = 31.729
 lock_rotation = true
 script = ExtResource("1_8u1uc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(113, -90)
-shape = SubResource("RectangleShape2D_rvgs5")
-
-[node name="Door" type="Sprite2D" parent="."]
-position = Vector2(113, -96)
-texture = ExtResource("1_qh5q4")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(113, -104.5)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_u0vuh")
+
+[node name="Pillar" type="Sprite2D" parent="."]
+texture = ExtResource("2_4glvx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.25)
+shape = SubResource("RectangleShape2D_rvgs5")

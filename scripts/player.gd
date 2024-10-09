@@ -49,8 +49,6 @@ func jump():
 
 # Double Jump function
 func double_jump():
-	print("double jumping",velocity.y)
-	
 	velocity.y = -jump_strength
 	can_double_jump = false
 	current_state = PlayerState.DOUBLE_JUMP
@@ -81,12 +79,9 @@ func _physics_process(delta):
 				GameManager.SpawnVFX(jumpvfx, global_position)
 				jump()
 			PlayerState.FALLING, PlayerState.JUMPING:
-				print("Not jumping from ground")
 				if !has_jumped:
-					print("Jump because has not jumped")
 					jump()
 				elif can_double_jump and double_jump_enabled:
-					print("Double jump")
 					double_jump()
 					
 	# Handle short jump

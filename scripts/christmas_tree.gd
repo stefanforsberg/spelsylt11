@@ -2,6 +2,13 @@ extends Node2D
 @onready var light_1 = $Light1
 @onready var light_2 = $Light2
 @onready var light_3 = $Light3
+@onready var light_5 = $Light5
+@onready var light_4 = $Light4
+@onready var light_6 = $Light6
+@onready var light_7 = $Light7
+@onready var light_8 = $Light8
+@onready var light_9 = $Light9
+@onready var light_10 = $Light10
 
 var positions = []
 # Called when the node enters the scene tree for the first time.
@@ -9,6 +16,13 @@ func _ready():
 	positions.push_front(light_1.global_position)
 	positions.push_front(light_2.global_position)
 	positions.push_front(light_3.global_position)
+	positions.push_front(light_4.global_position)
+	positions.push_front(light_5.global_position)
+	positions.push_front(light_6.global_position)
+	positions.push_front(light_7.global_position)
+	positions.push_front(light_8.global_position)
+	positions.push_front(light_9.global_position)
+	positions.push_front(light_10.global_position)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
