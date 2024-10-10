@@ -36,7 +36,7 @@ var current_state: PlayerState = PlayerState.IDLE:
 func _ready():
 	GameManager.camera = camera_2d
 	GameManager.player = self
-	GameManager.lastTeleportPosition = global_position
+	GameManager.startPosition = global_position
 
 # Jump function
 func jump():
@@ -107,6 +107,8 @@ func _physics_process(delta):
 				current_state = PlayerState.FALLING
 		PlayerState.FALLING:
 			if on_ground:
+				var landVfx = preload("res://scene/land_vfx.tscn")
+				GameManager.SpawnVFX(landVfx, global_position)
 				current_state = PlayerState.IDLE
 		PlayerState.DOUBLE_JUMP:
 			if velocity.y > 0.0:

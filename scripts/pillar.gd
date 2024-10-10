@@ -8,6 +8,8 @@ func _ready():
 	GameManager.lever_pulled.connect(reset)
 
 func reset(group_id: int):
+	print(id, group_id)
+	
 	if id == group_id:
 		global_position = original_position
 		linear_velocity = Vector2(0,0)

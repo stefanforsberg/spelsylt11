@@ -37,6 +37,7 @@ texture = ExtResource("1_76ups")
 
 [node name="Key" type="Sprite2D" parent="Door"]
 position = Vector2(0, -1)
+scale = Vector2(0.806666, 0.815883)
 texture = ExtResource("4_23ptt")
 
 [node name="KeyDetection" type="Area2D" parent="."]

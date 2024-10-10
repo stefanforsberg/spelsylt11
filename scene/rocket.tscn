@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0ynde25g3tj7"]
+
+[ext_resource type="Script" path="res://scripts/rocket.gd" id="1_q3nt6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3i5k"]
+
+[sub_resource type="Gradient" id="Gradient_b1uey"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.535)
+
+[node name="Rocket" type="Area2D"]
+position = Vector2(335, 386)
+script = ExtResource("1_q3nt6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h3i5k")
+
+[node name="Line2D" type="Line2D" parent="."]
+scale = Vector2(1, 0.971831)
+points = PackedVector2Array(250, 0, 0, 0)
+closed = true
+width = 2.0
+gradient = SubResource("Gradient_b1uey")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

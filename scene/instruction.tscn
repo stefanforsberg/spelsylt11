@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq2lel1p4f7mj"]
+
+[ext_resource type="Script" path="res://scripts/instruction.gd" id="1_4liep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7krc"]
+size = Vector2(49, 40)
+
+[node name="Instruction" type="Area2D"]
+script = ExtResource("1_4liep")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -20)
+shape = SubResource("RectangleShape2D_c7krc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -86.0
+offset_top = -68.0
+offset_right = 90.0
+offset_bottom = -10.0
+color = Color(0, 0, 0, 0.719)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_right = 174.0
+offset_bottom = 51.0
+text = "Press F (x) to use
+teleporter. Unlock more to poral between them."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

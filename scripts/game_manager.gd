@@ -2,10 +2,12 @@ extends Node
 
 var camera:Camera2D
 var player:Player
-var lastTeleportPosition:Vector2
+var startPosition:Vector2
 var collectedLightsLabel:Label
 var collectedLights = []
 var collectedKeys = []
+var portalPositions = []
+var portalPosition = 0
 
 signal key_collected(id:int)
 signal lever_pulled(id:int)
@@ -19,4 +21,10 @@ func SpawnVFX(vfxToSpawn: Resource, position: Vector2):
 	
 func reset():
 	GameManager.player.velocity = Vector2(0,0)
-	GameManager.player.global_position = GameManager.lastTeleportPosition
+	
+	GameManager.player.global_position = startPosition if portalPositions.size() == 0 else portalPositions[portalPosition]
+	
+func teleport():
+	GameManager.player.global_position = portalPositions[portalPosition]
+	
+	portalPosition = (portalPosition + 1) % portalPositions.size()

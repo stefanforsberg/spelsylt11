@@ -41,7 +41,7 @@ one_way_collision = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_eoufl")
 region_enabled = true
-region_rect = Rect2(0.335129, -0.167198, 47.1363, 5.79329)
+region_rect = Rect2(0.523933, 15.6875, 46.8227, 5.49981)
 
 [node name="Area2D" type="Area2D" parent="."]
 
