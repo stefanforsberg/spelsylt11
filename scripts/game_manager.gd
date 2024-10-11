@@ -11,6 +11,7 @@ var portalPosition = 0
 
 signal key_collected(id:int)
 signal lever_pulled(id:int)
+signal secret_lazer()
 
 func SpawnVFX(vfxToSpawn: Resource, position: Vector2):
 	var vfxInstance = vfxToSpawn.instantiate()
