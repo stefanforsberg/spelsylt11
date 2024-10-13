@@ -2,7 +2,7 @@
 
 Entry into spelsylt 11: https://itch.io/jam/spelsylt11
 
-Used these assets:
+## Used these assets:
 Secret: https://opengameart.org/content/parchement-textures
 
 Font: https://managore.itch.io/m5x7
