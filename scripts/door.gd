@@ -3,7 +3,6 @@ class_name Door
 
 @export var destination: Vector2
 @onready var gpu_particles_2d = $GPUParticles2D
-@onready var point_light_2d = $PointLight2D
 
 var canTeleport = false;
 var isActive = false
@@ -22,7 +21,6 @@ func _on_body_entered(body):
 	if body is Player:
 		canTeleport = true
 		gpu_particles_2d.emitting = true
-		point_light_2d.enabled = true
 		
 		if !isActive:
 			GameManager.portalPositions.append(global_position)

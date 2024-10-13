@@ -34,25 +34,25 @@ position = Vector2(12, 33)
 position = Vector2(-15, 67)
 
 [node name="Light4" type="Marker2D" parent="."]
-position = Vector2(11, -29)
+position = Vector2(10, -31)
 
 [node name="Light5" type="Marker2D" parent="."]
-position = Vector2(-11, -25)
+position = Vector2(-8, -24)
 
 [node name="Light6" type="Marker2D" parent="."]
-position = Vector2(-13, 27)
+position = Vector2(-12, 27)
 
 [node name="Light7" type="Marker2D" parent="."]
 position = Vector2(-25, 42)
 
 [node name="Light8" type="Marker2D" parent="."]
-position = Vector2(29, 68)
+position = Vector2(25, 64)
 
 [node name="Light9" type="Marker2D" parent="."]
-position = Vector2(2, 48)
+position = Vector2(2, 52)
 
 [node name="Light10" type="Marker2D" parent="."]
-position = Vector2(13, 8)
+position = Vector2(11, 8)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

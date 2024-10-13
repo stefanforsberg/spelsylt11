@@ -50,7 +50,7 @@ func _on_area_2d_body_entered(body):
 			
 		body.collected_lights = []
 		
-		GameManager.collectedLightsLabel.text = "%s / %s" % [str(GameManager.collectedLights.size()).pad_zeros(2), "12"]
+		GameManager.collectedLightsLabel.text = "%s / %s" % [str(GameManager.collectedLights.size()).pad_zeros(2), "10"]
 
 
 func _on_area_2d_body_exited(body):

@@ -51,5 +51,6 @@ process_material = SubResource("ParticleProcessMaterial_v88hi")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_m6g7c")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -14,7 +14,9 @@ extends Node2D
 @onready var color_statue_4: Area2D = $Statues/color_statue_4
 @onready var color_statue_door: StaticBody2D = $Statues/color_Statue_door
 
+@onready var tree_fire_fire = $PressurePlates/TreeFireFire
 @onready var tree_fire = $PressurePlates/TreeFire
+
 @onready var cl_9 = $ChristmasLights/Cl9
 
 var lonelyStatueJumps = 0
@@ -72,6 +74,7 @@ func _on_pressure_plate_1_body_entered(body: Node2D) -> void:
 	print(body)
 	if body is Player && tree_fire.material.get_shader_parameter("integrity") > 0:
 		get_tree().create_tween().tween_method(set_shader_value, 1.0, 0.0, 2);
+		tree_fire_fire.emitting = false
 		
 		
 func set_shader_value(value: float):

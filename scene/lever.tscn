@@ -89,6 +89,7 @@ animation = &"Pull"
 
 [node name="AudioLever" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7ug1s")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
