@@ -1,6 +1,7 @@
 extends Area2D
-
-@onready var line_2d = $Line2D
+@onready var audio_shoot: AudioStreamPlayer = $AudioShoot
+@onready var audio_hit: AudioStreamPlayer = $AudioHit
+@onready var line_2d: Line2D = $Line2D
 
 var direction = 0.5
 var min_angle = 180
@@ -28,8 +29,11 @@ func _process(delta):
 		direction = -1*direction  # Reverse the direction
 		
 	if canShoot && Input.is_action_just_pressed("Action"):
+
+		audio_shoot.play()
 		
 		if line_2d.rotation_degrees > 310 && line_2d.rotation_degrees < 330:
+			audio_hit.play()
 			GameManager.secret_lazer.emit()
 		
 		tween = create_tween().tween_property(line_2d, "self_modulate", Color(15, 3, 3, 3), 0.1)

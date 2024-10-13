@@ -3,6 +3,7 @@ extends Area2D
 @export var id: int = 0
 var canUse:bool = false
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var audio_lever: AudioStreamPlayer = $AudioLever
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +14,7 @@ func _ready():
 func _process(delta):
 	if canUse && Input.is_action_just_pressed("Action"):
 		animated_sprite_2d.play("Pull")
-		
+		audio_lever.play()
 		GameManager.lever_pulled.emit(id)
 		
 

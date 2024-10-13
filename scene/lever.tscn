@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://k0flrbjuwcxw"]
+[gd_scene load_steps=15 format=3 uid="uid://k0flrbjuwcxw"]
 
 [ext_resource type="Texture2D" uid="uid://puc27x440afj" path="res://graphics/lever.png" id="1_cdgte"]
 [ext_resource type="Script" path="res://scripts/lever.gd" id="1_m277p"]
+[ext_resource type="AudioStream" uid="uid://dyira00uauut3" path="res://sounds/blipSelect.wav" id="3_7ug1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rrt4k"]
 
@@ -85,6 +86,9 @@ shape = SubResource("RectangleShape2D_rrt4k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tjmqt")
 animation = &"Pull"
+
+[node name="AudioLever" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7ug1s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

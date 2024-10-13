@@ -26,6 +26,7 @@ func _on_body_entered(body):
 		
 		if !isActive:
 			GameManager.portalPositions.append(global_position)
+			GameManager.startPosition = global_position
 			isActive = true
 
 func _on_body_exited(body):

@@ -8,10 +8,12 @@ var collectedLights = []
 var collectedKeys = []
 var portalPositions = []
 var portalPosition = 0
+var currentSpawnPosition
 
 signal key_collected(id:int)
 signal lever_pulled(id:int)
 signal secret_lazer()
+signal statue_color_change()
 
 func SpawnVFX(vfxToSpawn: Resource, position: Vector2):
 	var vfxInstance = vfxToSpawn.instantiate()
@@ -23,9 +25,10 @@ func SpawnVFX(vfxToSpawn: Resource, position: Vector2):
 func reset():
 	GameManager.player.velocity = Vector2(0,0)
 	
-	GameManager.player.global_position = startPosition if portalPositions.size() == 0 else portalPositions[portalPosition]
+	GameManager.player.global_position = startPosition
 	
 func teleport():
 	GameManager.player.global_position = portalPositions[portalPosition]
 	
+	startPosition = portalPositions[portalPosition]
 	portalPosition = (portalPosition + 1) % portalPositions.size()

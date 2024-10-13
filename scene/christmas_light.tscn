@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbkcgejvl268x"]
+[gd_scene load_steps=7 format=3 uid="uid://bbkcgejvl268x"]
 
 [ext_resource type="Script" path="res://scripts/christmas_light.gd" id="1_bf2hb"]
 [ext_resource type="Texture2D" uid="uid://dxdoiwhn46v26" path="res://graphics/christmas_light.png" id="1_sas8j"]
+[ext_resource type="AudioStream" uid="uid://plid2gq7cpys" path="res://sounds/pickupCoin.wav" id="3_m6g7c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2175"]
 radius = 8.0
@@ -47,5 +48,8 @@ self_modulate = Color(2, 2, 2, 1)
 material = SubResource("CanvasItemMaterial_uhr02")
 amount = 13
 process_material = SubResource("ParticleProcessMaterial_v88hi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m6g7c")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

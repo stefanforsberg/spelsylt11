@@ -1,5 +1,5 @@
 extends RigidBody2D
-
+class_name Pillar
 @export var id:int = 0
 var original_position: Vector2
 

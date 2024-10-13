@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0ynde25g3tj7"]
+[gd_scene load_steps=8 format=3 uid="uid://c0ynde25g3tj7"]
 
 [ext_resource type="Script" path="res://scripts/rocket.gd" id="1_q3nt6"]
 [ext_resource type="Texture2D" uid="uid://cj8smb3l7x24h" path="res://graphics/lazer.png" id="2_bot6h"]
+[ext_resource type="AudioStream" uid="uid://dje4cgc0iwo5a" path="res://sounds/laserShoot.wav" id="3_iswtn"]
+[ext_resource type="AudioStream" uid="uid://cm6oeyd7fghsh" path="res://sounds/explosion.wav" id="4_1kjhb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3i5k"]
 
@@ -33,6 +35,12 @@ closed = true
 width = 2.0
 width_curve = SubResource("Curve_5vcvy")
 gradient = SubResource("Gradient_b1uey")
+
+[node name="AudioShoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iswtn")
+
+[node name="AudioHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1kjhb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
