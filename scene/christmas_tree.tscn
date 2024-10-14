@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6bh6w2nj5wpo"]
+[gd_scene load_steps=7 format=3 uid="uid://b6bh6w2nj5wpo"]
 
 [ext_resource type="Script" path="res://scripts/christmas_tree.gd" id="1_ab46c"]
 [ext_resource type="Texture2D" uid="uid://mwualvfw72y6" path="res://graphics/christmas_tree.png" id="1_dmyt2"]
 [ext_resource type="Shader" uid="uid://b5romu32dl4h7" path="res://shaders/christmas_tree.tres" id="2_4pjck"]
+[ext_resource type="PackedScene" uid="uid://bnnsukydagacn" path="res://scene/disco.tscn" id="4_s8tqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qu43d"]
 size = Vector2(123, 161)
@@ -53,6 +54,10 @@ position = Vector2(2, 52)
 
 [node name="Light10" type="Marker2D" parent="."]
 position = Vector2(11, 8)
+
+[node name="Disco" parent="." instance=ExtResource("4_s8tqa")]
+visible = false
+position = Vector2(0, 77)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

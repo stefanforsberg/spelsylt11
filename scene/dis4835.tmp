@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnnsukydagacn"]
+
+[ext_resource type="Texture2D" uid="uid://mwualvfw72y6" path="res://graphics/christmas_tree.png" id="1_8addh"]
+[ext_resource type="Script" path="res://scripts/disco.gd" id="1_uukty"]
+
+[sub_resource type="Curve" id="Curve_ooxmq"]
+_data = [Vector2(0, 0.505494), 0.0, 1.44286, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Disco" type="Node2D"]
+position = Vector2(85, 145)
+script = ExtResource("1_uukty")
+
+[node name="ChristmasTree" type="Sprite2D" parent="."]
+position = Vector2(0, -80)
+texture = ExtResource("1_8addh")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-1, -140)
+points = PackedVector2Array(1, 0, -55, 139)
+width = 1.0
+width_curve = SubResource("Curve_ooxmq")
+default_color = Color(0.979203, 0.494716, 1, 1)
+joint_mode = 1
+begin_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(-1, -140)
+points = PackedVector2Array(1, 0, -18, 140)
+width = 1.0
+default_color = Color(0.621354, 0.706912, 0.991629, 1)
+joint_mode = 1
+begin_cap_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2(-1, -140)
+points = PackedVector2Array(1, 0, 27, 140)
+width = 1.0
+default_color = Color(0.0185939, 1, 0.966027, 1)
+joint_mode = 1
+begin_cap_mode = 2
+
+[node name="Line2D4" type="Line2D" parent="."]
+position = Vector2(-1, -140.021)
+scale = Vector2(1, 0.978873)
+points = PackedVector2Array(1, 0, 58, 143.043)
+width = 1.0
+default_color = Color(0.856103, 0.7968, 0, 1)
+joint_mode = 1
+begin_cap_mode = 2

@@ -9,6 +9,9 @@ extends Node2D
 @onready var light_8 = $Light8
 @onready var light_9 = $Light9
 @onready var light_10 = $Light10
+@onready var disco = $Disco
+
+var collectedLights = 0
 
 var positions = []
 # Called when the node enters the scene tree for the first time.
@@ -32,23 +35,23 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body is Player:
-		#tween.tween_property($Sprite, "position",# Vector2(200, 300), 1)
-		
-		#create_tween().tween_property(GameManager.camera, "zoom", Vector2(2, 2), Vector2(1.5, 1.5), 1.0, Tween.TransitionType.TRANS_LINEAR, Tween.EaseType.IN_OUT)
-		
-		#GameManager.camera.zoom.x = 1.5
-		#GameManager.camera.zoom.y = 1.5
 		
 		for light in body.collected_lights:
 			light.global_position = body.global_position
 			
 			create_tween().tween_property(light, "global_position", positions[light.id], 1)
 			
+			collectedLights += 1
+			
 			light.visible = true
 			
 			GameManager.collectedLights.push_back(light.id)
 			
 		body.collected_lights = []
+		
+		
+		if collectedLights == 10:
+			disco.visible = true
 		
 		GameManager.collectedLightsLabel.text = "%s / %s" % [str(GameManager.collectedLights.size()).pad_zeros(2), "10"]
 

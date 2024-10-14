@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnnsukydagacn"]
+
+[ext_resource type="Script" path="res://scripts/disco.gd" id="1_uukty"]
+
+[sub_resource type="Curve" id="Curve_ooxmq"]
+_data = [Vector2(0, 0.505494), 0.0, 1.44286, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_tg2yi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.04945, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_h26xo"]
+curve = SubResource("Curve_tg2yi")
+
+[sub_resource type="Gradient" id="Gradient_nmkf3"]
+offsets = PackedFloat32Array(0, 0.213115, 0.442623, 0.631148, 0.836066, 1)
+colors = PackedColorArray(0.710254, 0.89618, 1, 1, 0.420545, 0.994277, 1, 1, 0.808332, 1, 0.290688, 1, 1, 0.921673, 0.857139, 1, 1, 0.962719, 0.954173, 1, 1, 0.597357, 0.669886, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r8wct"]
+gradient = SubResource("Gradient_nmkf3")
+
+[sub_resource type="Curve" id="Curve_h744e"]
+max_value = 3.0
+_data = [Vector2(0, 0.0659341), 0.0, 0.0, 0, 0, Vector2(0.386667, 2.63736), 0.0, 0.0, 0, 0, Vector2(1, 0.197802), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0wif5"]
+curve = SubResource("Curve_h744e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qq7kn"]
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, -2, 0)
+spread = 103.146
+initial_velocity_min = 45.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+damping_max = 35.0
+scale_curve = SubResource("CurveTexture_0wif5")
+color = Color(1, 0.466136, 0.994229, 1)
+color_ramp = SubResource("GradientTexture1D_r8wct")
+alpha_curve = SubResource("CurveTexture_h26xo")
+
+[node name="Disco" type="Node2D"]
+position = Vector2(85, 145)
+script = ExtResource("1_uukty")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-1, -140)
+points = PackedVector2Array(1, 0, -55, 139)
+width = 1.0
+width_curve = SubResource("Curve_ooxmq")
+default_color = Color(0.979203, 0.494716, 1, 1)
+joint_mode = 1
+begin_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(-1, -140)
+points = PackedVector2Array(1, 0, -18, 140)
+width = 1.0
+default_color = Color(0.621354, 0.706912, 0.991629, 1)
+joint_mode = 1
+begin_cap_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2(-1, -140)
+points = PackedVector2Array(1, 0, 27, 140)
+width = 1.0
+default_color = Color(0.0185939, 1, 0.966027, 1)
+joint_mode = 1
+begin_cap_mode = 2
+
+[node name="Line2D4" type="Line2D" parent="."]
+position = Vector2(-1, -140.021)
+scale = Vector2(1, 0.978873)
+points = PackedVector2Array(1, 0, 58, 143.043)
+width = 1.0
+default_color = Color(0.856103, 0.7968, 0, 1)
+joint_mode = 1
+begin_cap_mode = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = -66.0
+offset_top = -72.0
+offset_right = 69.0
+offset_bottom = -59.0
+text = "Tack, du har räddat julen!"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -122)
+amount = 150
+process_material = SubResource("ParticleProcessMaterial_qq7kn")

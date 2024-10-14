@@ -29,6 +29,13 @@ func _ready():
 	GameManager.statue_color_change.connect(statue_color_change)
 
 func _process(delta):
+	
+	
+	
+	if Input.is_action_just_pressed("ToggleAudio"):
+		var audioServerIndex = AudioServer.get_bus_index("Master")
+		AudioServer.set_bus_mute(audioServerIndex, false if AudioServer.is_bus_mute(audioServerIndex) else true)
+	
 	if isCountingJumps && !cl_9.visible && Input.is_action_just_pressed("Up"):
 		lonelyStatueJumps += 1
 		

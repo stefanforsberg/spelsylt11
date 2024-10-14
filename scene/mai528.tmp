@@ -712,7 +712,7 @@ id = 1.0
 [node name="Cl2" parent="ChristmasLights" instance=ExtResource("11_3e455")]
 modulate = Color(0.573218, 0.570137, 0.199081, 1)
 self_modulate = Color(2, 2, 2, 1)
-position = Vector2(-154, -203)
+position = Vector2(-154, -201)
 scale = Vector2(0.994918, 1.06159)
 id = 2.0
 
