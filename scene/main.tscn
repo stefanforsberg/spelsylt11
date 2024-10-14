@@ -191,7 +191,7 @@ size = Vector2(19, 22.5)
 size = Vector2(15, 65)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mosf0"]
-size = Vector2(44, 51)
+size = Vector2(44, 95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxdmg"]
 size = Vector2(31, 8)
@@ -974,7 +974,7 @@ texture = ExtResource("25_w6q3n")
 [node name="LonelyStatueJumpArea" type="Area2D" parent="Statues/LonelyStatue"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Statues/LonelyStatue/LonelyStatueJumpArea"]
-position = Vector2(0, -9.5)
+position = Vector2(0, -31.5)
 shape = SubResource("RectangleShape2D_mosf0")
 
 [node name="PressurePlates" type="Node2D" parent="."]
